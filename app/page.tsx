@@ -1,65 +1,258 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ThemeToggle } from "./components/ThemeToggle";
+import { Achievements } from "./components/Achievements";
+import { Timer } from "./components/Timer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <main className="min-h-screen text-gray-900 dark:text-[#ededed] relative z-10 bg-transparent">
+      <ThemeToggle />
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24 relative z-10">
+        {/* Hero Section */}
+        <section className="mb-20">
+          <div className="flex items-start gap-4 mb-6">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-2xl font-bold text-black dark:text-black">
+              a
+            </div>
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold mb-3">abhishrestha</h1>
+              <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <Link href="https://linkedin.com/in/abhishrestha-tiwari" target="_blank" className="hover:text-green-500 dark:hover:text-green-400 transition-colors">
+                  LinkedIn
+                </Link>
+                <Link href="https://github.com/abhishrestha" target="_blank" className="hover:text-green-500 dark:hover:text-green-400 transition-colors">
+                  GitHub
+                </Link>
+                <a href="mailto:abhishrestha.primary@gmail.com" className="hover:text-green-500 dark:hover:text-green-400 transition-colors">
+                  Email
+                </a>
+              </div>
+            </div>
+          </div>
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl">
+            i'm abhishrestha :)
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </section>
+
+        {/* What I Do Section */}
+        <section className="mb-20">
+          <h2 className="text-2xl font-bold mb-6 text-green-500 dark:text-green-400">what i do</h2>
+          <p className="text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            I'm currently working as a Technical Content Writer at Scaler, documenting interview experiences 
+            and enhancing learning platforms. I also build production-ready mobile and web applications, 
+            specializing in React Native and modern web technologies.
+          </p>
+
+          {/* Experience */}
+          <div className="space-y-6">
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2">
+              <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  S
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">Technical Content Writer Intern</h3>
+                    <span className="text-gray-400">•</span>
+                    <Link href="https://www.linkedin.com/school/scalerofficial/posts/?feedView=all" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
+                      Scaler
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">May 2025 – Present • Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    Documented over 600 interview experiences across various software engineering domains to support 5,000+ learners. 
+                    Enhanced Scaler's learning platform by refining modules on system design, data structures, and core tech concepts. 
+                    Curated and added 2,500+ coding and problem-solving questions to the companion platform.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2">
+              <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  L
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">Software Engineer</h3>
+                    <span className="text-gray-400">•</span>
+                    <Link href="https://www.linkedin.com/company/pmcprecisionco/posts/?feedView=all" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
+                      Lumio
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Aug 2025 – Sep 2025 • San Francisco, CA • Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                  Optimized React Native app performance by refactoring heavy UI renders to `FlatList`, memoizing callbacks, 
+                  and debouncing API calls to reduce re-renders and network overhead. Improved app stability by fixing repeated `useEffect` executions, interval leaks, and state synchronization issues. Enhanced accessibility with proper labels and improved UX through form validation and UI alignment fixes. Delivered scalable,
+                  maintainable frontend improvements across chat, meals, steps, and health tracking modules.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2">
+              <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  T
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">React Native Developer</h3>
+                    <span className="text-gray-400">•</span>
+                    <Link href="https://www.linkedin.com/company/tech-instance/posts/?feedView=all" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
+                      TechInstance
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Mar 2025 – Apr 2025 • Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    Implemented 7 production screens and 15 reusable components, boosting code-reuse by 40% and shaving 1 sprint off release cycles. 
+                    Integrated Google Maps + H3 geospatial indexing; improved pickup-ETA accuracy from ±900 m to ±85 m and cut Maps-API spend by 22%.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold mb-6 text-green-500 dark:text-green-400">projects</h2>
+          <div className="space-y-6">
+            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-xl font-semibold">Trackify</h3>
+                <Link 
+                  href="https://github.com/abhishrestha/trackify" 
+                  target="_blank"
+                  className="text-green-500 dark:text-green-400 hover:underline text-sm"
+                >
+                  GitHub →
+                </Link>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">React Native, Expo, Firebase, JavaScript</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3">
+                Engineered a full-stack mobile application to streamline tiffin subscription management for campus students, 
+                automating daily order tracking and payment workflows
+              </p>
+              <ul className="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                <li>Implemented a Cron-based scheduling system to improve user notifications</li>
+                <li>Optimized Firestore queries and implemented local caching, reducing average order-fetch latency from 1.8s to 180ms (90% improvement)</li>
+              </ul>
+            </div>
+
+            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-xl font-semibold">AI-Powered Speech Analysis</h3>
+                <Link 
+                  href="https://github.com/abhishrestha/ai-speech-analysis" 
+                  target="_blank"
+                  className="text-green-500 dark:text-green-400 hover:underline text-sm"
+                >
+                  GitHub →
+                </Link>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">React, Firebase Auth, Web Speech API, Gemini API, Google Cloud</p>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed mb-3">
+                Developed an intelligent, browser-based speech analysis tool offering real-time insights on pronunciation, 
+                tone, and delivery for speakers and presenters
+              </p>
+              <ul className="text-gray-300 text-sm space-y-1 list-disc list-inside">
+                <li>Leveraged Google Cloud Speech-to-Text and Gemini API to quantify clarity, engagement, and delivery metrics</li>
+                <li>Enhanced feedback precision by 50%</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Skills Section */}
+        <section className="mb-20">
+          <h2 className="text-3xl font-bold mb-6 text-green-500 dark:text-green-400">technical skills</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Languages</h3>
+              <div className="flex flex-wrap gap-2">
+                {["JavaScript", "TypeScript", "C++", "Python", "SQL", "Java"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Frameworks & Libraries</h3>
+              <div className="flex flex-wrap gap-2">
+                {["React", "React Native", "Expo", "Next.js", "Node.js", "Express", "Tailwind CSS"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Databases & Cloud</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Firebase", "Firestore", "Google Cloud Platform"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Tools</h3>
+              <div className="flex flex-wrap gap-2">
+                {["Git", "Postman", "VS Code", "Figma"].map((skill) => (
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Achievements Section */}
+        <Achievements />
+
+
+        {/* Contact Section */}
+        <section className="mb-10">
+          <h2 className="text-3xl font-bold mb-6 text-green-500 dark:text-green-400">get in touch</h2>
+          <div className="flex flex-wrap gap-4">
+            <a 
+              href="mailto:abhishrestha.primary@gmail.com" 
+              className="px-6 py-3 bg-green-500 dark:bg-green-400 text-white dark:text-black rounded-lg font-semibold hover:bg-green-600 dark:hover:bg-green-500 transition-colors inline-flex items-center gap-2"
+            >
+              Email me
+              <span>→</span>
+            </a>
+            <Link 
+              href="https://linkedin.com/in/abhishrestha-tiwari" 
+              target="_blank"
+              className="px-6 py-3 border border-gray-400 dark:border-gray-700 rounded-lg font-semibold hover:border-green-500 dark:hover:border-green-400 transition-colors inline-flex items-center gap-2"
+            >
+              LinkedIn
+              <span>↗</span>
+            </Link>
+            <Link 
+              href="https://github.com/abhishrestha" 
+              target="_blank"
+              className="px-6 py-3 border border-gray-400 dark:border-gray-700 rounded-lg font-semibold hover:border-green-500 dark:hover:border-green-400 transition-colors inline-flex items-center gap-2"
+            >
+              GitHub
+              <span>↗</span>
+            </Link>
+          </div>
+        </section>
+
+        {/* Timer */}
+        <Timer />
+        {/* Footer */}
+        <footer className="pt-6 text-center text-sm text-gray-600 dark:text-gray-500">
+          <p>© abhishrestha </p>
+        </footer>
+      </div>
+    </main>
   );
 }

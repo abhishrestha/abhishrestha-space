@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --dot-color: #000000;
+  --dot-size: 2px;
+  --dot-spacing: 140px;
+  --dot-opacity: 0.3;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --dot-color: #ffffff;
+  --dot-opacity: 0.2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-plex-mono);
+  --font-mono: var(--font-plex-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--background);
+  min-height: 100%;
+  position: relative;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-plex-mono), 'Courier New', monospace;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Dot matrix background pattern - fixed overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    var(--dot-color) var(--dot-size),
+    transparent var(--dot-size)
+  );
+  background-size: var(--dot-spacing) var(--dot-spacing);
+  background-position: 0 0;
+  background-repeat: repeat;
+  opacity: var(--dot-opacity);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Screen reader only - for accessibility announcements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
