@@ -1,17 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
-    // Track the visit and get count
     fetch("/api/track", { method: "POST" })
       .then((res) => res.json())
       .then((data) => setCount(data.count))
       .catch(() => {
-        // Fallback: just fetch the count
         fetch("/api/visitors")
           .then((res) => res.json())
           .then((data) => setCount(data.count))
@@ -20,7 +19,11 @@ export function VisitorCounter() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-2 text-gray-500 dark:text-gray-500 text-sm">
+    <Link
+      href="/admin"
+      className="inline-flex items-center gap-2 text-gray-500 dark:text-gray-500 text-sm 
+        hover:text-green-500 dark:hover:text-green-400 transition-colors mx-auto cursor-pointer"
+    >
       <svg
         className="w-4 h-4"
         fill="none"
@@ -41,6 +44,6 @@ export function VisitorCounter() {
           <>{count.toLocaleString()} unique visitor{count !== 1 ? "s" : ""}</>
         )}
       </span>
-    </div>
+    </Link>
   );
 }

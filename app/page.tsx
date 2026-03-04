@@ -9,11 +9,14 @@ export default function Home() {
   return (
     <main className="min-h-screen text-gray-900 dark:text-[#ededed] relative z-10 bg-transparent">
       <ThemeToggle />
-      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 pt-4 md:pt-6 relative z-10">
+        <div className="flex justify-end mb-8 md:mb-12">
+          <VisitorCounter />
+        </div>
         {/* Hero Section */}
         <section className="mb-20">
           <div className="flex items-start gap-4 mb-6">
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-2xl font-bold text-black dark:text-black">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center text-2xl font-bold text-black dark:text-black avatar-glow">
               a
             </div>
             <div>
@@ -48,7 +51,7 @@ export default function Home() {
 
           {/* Experience */}
           <div className="space-y-6">
-            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2">
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   S
@@ -71,7 +74,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2">
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   L
@@ -94,7 +97,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2">
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   T
@@ -122,7 +125,7 @@ export default function Home() {
         <section className="mb-20">
           <h2 className="text-3xl font-bold mb-6 text-green-500 dark:text-green-400">projects</h2>
           <div className="space-y-6">
-            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 border-glow transition-all duration-300">
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-xl font-semibold">Spectra</h3>
                 <Link 
@@ -145,7 +148,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 border-glow transition-all duration-300">
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-xl font-semibold">Trackify</h3>
                 <Link 
@@ -167,7 +170,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+            <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-6 border-glow transition-all duration-300">
               <div className="flex items-start justify-between mb-3">
                 <h3 className="text-xl font-semibold">AI-Powered Speech Analysis</h3>
                 <Link 
@@ -199,7 +202,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Languages</h3>
               <div className="flex flex-wrap gap-2">
                 {["JavaScript", "TypeScript", "Python", "C++", "Java", "SQL", "HTML", "CSS"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -209,7 +212,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Frontend</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "React Native", "Next.js", "Redux", "Tailwind CSS", "Material-UI", "Responsive Design"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -219,7 +222,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Backend</h3>
               <div className="flex flex-wrap gap-2">
                 {["Node.js", "Express.js", "FastAPI", "RESTful APIs"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -229,7 +232,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">AI / ML</h3>
               <div className="flex flex-wrap gap-2">
                 {["LangChain", "LangGraph", "OpenAI API", "Gemini API", "RAG"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -239,7 +242,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Databases</h3>
               <div className="flex flex-wrap gap-2">
                 {["PostgreSQL", "Firebase", "Firestore", "Supabase", "MongoDB", "SQL Database Design"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -249,7 +252,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">DevOps & Tools</h3>
               <div className="flex flex-wrap gap-2">
                 {["Git", "GitHub", "Docker", "Postman", "VS Code"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -259,7 +262,7 @@ export default function Home() {
               <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400 mb-3 uppercase tracking-wide">Cloud & Services</h3>
               <div className="flex flex-wrap gap-2">
                 {["Google Cloud Platform", "Firebase Auth", "OAuth 2.0", "Supabase"].map((skill) => (
-                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300">
+                  <span key={skill} className="px-3 py-1 bg-gray-200 dark:bg-gray-800 rounded-full text-sm text-gray-800 dark:text-gray-300 border border-transparent skill-tag cursor-default">
                     {skill}
                   </span>
                 ))}
@@ -278,7 +281,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-4">
             <a 
               href="mailto:abhishrestha.primary@gmail.com" 
-              className="px-6 py-3 bg-green-500 dark:bg-green-400 text-white dark:text-black rounded-lg font-semibold hover:bg-green-600 dark:hover:bg-green-500 transition-colors inline-flex items-center gap-2"
+              className="px-6 py-3 bg-green-500 dark:bg-green-400 text-white dark:text-black rounded-lg font-semibold hover:bg-green-600 dark:hover:bg-green-500 transition-colors inline-flex items-center gap-2 border-glow"
             >
               Email me
               <span>→</span>
@@ -286,7 +289,7 @@ export default function Home() {
             <Link 
               href="https://linkedin.com/in/abhishrestha-tiwari" 
               target="_blank"
-              className="px-6 py-3 border border-gray-400 dark:border-gray-700 rounded-lg font-semibold hover:border-green-500 dark:hover:border-green-400 transition-colors inline-flex items-center gap-2"
+              className="px-6 py-3 border border-gray-400 dark:border-gray-700 rounded-lg font-semibold inline-flex items-center gap-2 border-glow"
             >
               LinkedIn
               <span>↗</span>
@@ -294,7 +297,7 @@ export default function Home() {
             <Link 
               href="https://github.com/abhishrestha" 
               target="_blank"
-              className="px-6 py-3 border border-gray-400 dark:border-gray-700 rounded-lg font-semibold hover:border-green-500 dark:hover:border-green-400 transition-colors inline-flex items-center gap-2"
+              className="px-6 py-3 border border-gray-400 dark:border-gray-700 rounded-lg font-semibold inline-flex items-center gap-2 border-glow"
             >
               GitHub
               <span>↗</span>
@@ -306,7 +309,6 @@ export default function Home() {
         <Timer />
         {/* Footer */}
         <footer className="pt-6 text-center text-sm text-gray-600 dark:text-gray-500 space-y-2">
-          <VisitorCounter />
           <p>© abhishrestha </p>
         </footer>
       </div>

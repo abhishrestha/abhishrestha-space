@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 interface Visitor {
@@ -14,41 +14,20 @@ interface Visitor {
 }
 
 export default function AdminPage() {
-  const [key, setKey] = useState("");
-  const [authenticated, setAuthenticated] = useState(false);
   const [visitors, setVisitors] = useState<Visitor[]>([]);
   const [count, setCount] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(true);
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const res = await fetch("/api/admin/visitors", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key }),
-      });
-
-      if (res.status === 401) {
-        setError("Invalid key. Access denied.");
-        setLoading(false);
-        return;
-      }
-
-      const data = await res.json();
-      setVisitors(data.visitors);
-      setCount(data.count);
-      setAuthenticated(true);
-    } catch {
-      setError("Something went wrong. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    fetch("/api/admin/visitors")
+      .then((res) => res.json())
+      .then((data) => {
+        setVisitors(data.visitors || []);
+        setCount(data.count || 0);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
 
   const formatDate = (iso: string) => {
     return new Date(iso).toLocaleString("en-US", {
@@ -60,53 +39,15 @@ export default function AdminPage() {
     });
   };
 
-  if (!authenticated) {
+  if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center text-gray-900 dark:text-[#ededed] bg-transparent relative z-10">
-        <div className="w-full max-w-sm mx-auto px-6">
-          <div className="border border-gray-300 dark:border-gray-700 rounded-xl p-8 bg-white/50 dark:bg-[#111]/50 backdrop-blur-sm">
-            <div className="flex items-center gap-2 mb-6">
-              <svg className="w-5 h-5 text-green-500 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-              </svg>
-              <h1 className="text-xl font-bold text-green-500 dark:text-green-400">Admin Access</h1>
-            </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-              Enter your encryption key to view visitor analytics.
-            </p>
-            <form onSubmit={handleLogin}>
-              <input
-                type="password"
-                value={key}
-                onChange={(e) => setKey(e.target.value)}
-                placeholder="Enter encryption key"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 
-                  bg-white dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 
-                  focus:outline-none focus:border-green-500 dark:focus:border-green-400 
-                  text-sm mb-4 placeholder-gray-400 dark:placeholder-gray-600"
-                autoFocus
-              />
-              {error && (
-                <p className="text-red-500 text-xs mb-3">{error}</p>
-              )}
-              <button
-                type="submit"
-                disabled={loading || !key}
-                className="w-full px-4 py-3 rounded-lg font-semibold text-sm transition-all
-                  bg-green-500 dark:bg-green-400 text-white dark:text-black
-                  hover:bg-green-600 dark:hover:bg-green-500
-                  disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {loading ? "Verifying..." : "Unlock"}
-              </button>
-            </form>
-            <Link
-              href="/"
-              className="block text-center text-sm text-gray-400 dark:text-gray-600 mt-4 hover:text-green-500 dark:hover:text-green-400 transition-colors"
-            >
-              ← Back to portfolio
-            </Link>
-          </div>
+        <div className="flex items-center gap-3 text-gray-500 dark:text-gray-400">
+          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+          </svg>
+          <span>Loading visitor data...</span>
         </div>
       </main>
     );

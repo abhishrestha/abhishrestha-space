@@ -143,7 +143,7 @@ export function Achievements() {
       <h2 className="text-3xl font-bold mb-6 text-green-500 dark:text-green-400">programming achievements</h2>
       <div className="space-y-4">
         {/* LeetCode */}
-        <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-4 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+        <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-4 border-glow">
           <div className="flex items-center justify-between">
             <div className="flex-1">
               <h3 className="font-semibold mb-2">LeetCode</h3>
@@ -174,7 +174,7 @@ export function Achievements() {
         </div>
 
         {/* Codeforces */}
-        <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-4 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+        <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-4 border-glow">
           <div className="flex items-center justify-between">
             <div className="flex-1">
               <h3 className="font-semibold mb-2">Codeforces</h3>
@@ -205,7 +205,7 @@ export function Achievements() {
         </div>
 
         {/* CodeChef - keeping static for now */}
-        <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-4 hover:border-green-500/50 dark:hover:border-green-400/50 transition-colors">
+        <div className="border border-gray-300 dark:border-gray-800 rounded-lg p-4 border-glow">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="font-semibold mb-1">CodeChef</h3>

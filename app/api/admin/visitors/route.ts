@@ -1,7 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { redis } from "@/app/lib/redis";
-
-const ADMIN_KEY = "space@abhishrestha";
 
 interface VisitorData {
   city: string;
@@ -12,14 +10,8 @@ interface VisitorData {
   visits: number;
 }
 
-export async function POST(req: NextRequest) {
+export async function GET() {
   try {
-    const { key } = await req.json();
-
-    if (key !== ADMIN_KEY) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const allVisitors = await redis.hgetall("visitors");
     const count = (await redis.get("visitor_count")) || 0;
 
