@@ -3,6 +3,7 @@ import { ThemeToggle } from "./components/ThemeToggle";
 import { Achievements } from "./components/Achievements";
 import { Timer } from "./components/Timer";
 import { SummaryButton } from "./components/SummaryButton";
+import { VisitorCounter } from "./components/VisitorCounter";
 
 export default function Home() {
   return (
@@ -304,7 +305,8 @@ export default function Home() {
         {/* Timer */}
         <Timer />
         {/* Footer */}
-        <footer className="pt-6 text-center text-sm text-gray-600 dark:text-gray-500">
+        <footer className="pt-6 text-center text-sm text-gray-600 dark:text-gray-500 space-y-2">
+          <VisitorCounter />
           <p>© abhishrestha </p>
         </footer>
       </div>
