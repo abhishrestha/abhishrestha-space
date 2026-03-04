@@ -48,7 +48,7 @@ Cloud & Services: Google Cloud Platform, Firebase Auth, OAuth 2.0, Supabase
 
 COMPETITIVE PROGRAMMING:
 - LeetCode: Solved 400+ algorithmic problems across arrays, strings, trees, graphs, dynamic programming, and system design. Contest rating: 1601 (Top 15%).
-- Codeforces: Achieved Pupil rank with maximum rating of 1309. Participated in 50+ contests solving algorithmic challenges.
+- Codeforces: Achieved Pupil rank with maximum rating of 1309. Participated in 50+ contests solving algorithmic challenges. Solved more than 500+ problems on Codeforces.
 - CodeChef: Ranked 187th globally out of 35,000+ participants in Starters 154 competition. Strong problem-solving skills in data structures and algorithms.
 `;
 
