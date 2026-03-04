@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ThemeToggle } from "./components/ThemeToggle";
 import { Achievements } from "./components/Achievements";
 import { Timer } from "./components/Timer";
+import { SummaryButton } from "./components/SummaryButton";
 
 export default function Home() {
   return (
@@ -29,9 +30,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-2xl">
-            i'm abhishrestha :)
-          </p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+              i'm abhishrestha :)
+            </p>
+            <SummaryButton />
+          </div>
         </section>
 
         {/* What I Do Section */}

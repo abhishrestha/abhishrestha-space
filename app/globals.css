@@ -64,6 +64,22 @@ body::before {
   z-index: 0;
 }
 
+/* Modal entrance animation */
+.animate-in {
+  animation: modalIn 0.2s ease-out;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 /* Screen reader only - for accessibility announcements */
 .sr-only {
   position: absolute;
