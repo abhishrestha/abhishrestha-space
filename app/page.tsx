@@ -53,6 +53,27 @@ export default function Home() {
           <div className="space-y-6">
             <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
               <div className="flex items-start gap-4 mb-2">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center text-white font-bold text-sm mt-1">
+                  G
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                    <h3 className="text-xl font-semibold">GSoC Contributor</h3>
+                    <span className="text-gray-400">•</span>
+                    <Link href="https://www.linuxfoundation.org" target="_blank" className="text-green-500 dark:text-green-400 hover:underline">
+                      The Linux Foundation
+                    </Link>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Selected for Google Summer of Code 2026 • Remote</p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    Selected as a Google Summer of Code contributor with The Linux Foundation, contributing to open-source development and collaborating with maintainers across the ecosystem.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="border-l-2 border-green-500 dark:border-green-400 pl-6 py-2 border-shimmer">
+              <div className="flex items-start gap-4 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-sm mt-1">
                   S
                 </div>

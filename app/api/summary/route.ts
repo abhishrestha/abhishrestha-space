@@ -10,6 +10,10 @@ Name: Abhishrestha Tiwari
 Portfolio: abhishrestha
 
 EXPERIENCE:
+1. GSoC Contributor at The Linux Foundation (Selected for Google Summer of Code 2026, Remote)
+  - Selected as a Google Summer of Code contributor with The Linux Foundation.
+  - Contributing to open-source development and collaborating with maintainers across the ecosystem.
+
 1. Technical Content Writer Intern at Scaler (May 2025 – Present, Remote)
    - Documented over 1000+ interview experiences across various software engineering domains to support 5,000+ learners.
    - Enhanced Scaler's learning platform by refining modules on system design, data structures, and core tech concepts.
